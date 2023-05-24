@@ -1,9 +1,10 @@
-function Button() {
+export function Button({ label, type }) {
   return (
-    <button className="bg-neutral-950 px-4 py-2.5 rounded-md text-neutral-50 font-bold text-sm">
-      Button signup
+    <button
+      className={`bg-neutral-950 p-4 rounded-md text-neutral-50 font-bold text-sm w-full`}
+      type={type}
+    >
+      {label}
     </button>
   );
 }
-
-export default Button;
