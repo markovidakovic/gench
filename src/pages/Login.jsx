@@ -9,8 +9,22 @@ export function Login() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(email);
-    console.log(password);
+    const data = {
+      email,
+      password,
+    };
+    fetch(import.meta.env.VITE_API_URL + '/auth/tokens/access', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((resp) => resp.json())
+      .then((json) => {
+        console.log(json);
+      })
+      .catch((err) => console.log(err));
   }
 
   return (
