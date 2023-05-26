@@ -23,6 +23,7 @@ export function Login() {
       .then((resp) => resp.json())
       .then((json) => {
         console.log(json);
+        localStorage.setItem('access_token', json.access_token);
       })
       .catch((err) => console.log(err));
   }
