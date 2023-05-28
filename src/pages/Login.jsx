@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Input } from '../parts';
-import { AuthPageLayout } from '../layout';
+import { PublicPage } from '../layout';
 
 export function Login() {
   const [email, setEmail] = useState('');
@@ -29,7 +29,7 @@ export function Login() {
   }
 
   return (
-    <AuthPageLayout>
+    <PublicPage>
       <div className="border rounded-md p-6">
         <form onSubmit={handleSubmit}>
           <div>
@@ -60,6 +60,6 @@ export function Login() {
           </Link>
         </div>
       </div>
-    </AuthPageLayout>
+    </PublicPage>
   );
 }

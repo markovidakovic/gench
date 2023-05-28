@@ -1,3 +1,9 @@
+import { PrivatePage } from '../layout';
+
 export function Activities() {
-  return <h1>Activities</h1>;
+  return (
+    <PrivatePage>
+      <h1>Activities</h1>
+    </PrivatePage>
+  );
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Input } from '../parts';
-import { AuthPageLayout } from '../layout';
+import { PublicPage } from '../layout';
 
 export function Signup() {
   const [name, setName] = useState('');
@@ -30,7 +30,7 @@ export function Signup() {
   }
 
   return (
-    <AuthPageLayout>
+    <PublicPage>
       <div className="border rounded-md p-6">
         <form onSubmit={handleSubmit}>
           <div>
@@ -70,6 +70,6 @@ export function Signup() {
           </div>
         </form>
       </div>
-    </AuthPageLayout>
+    </PublicPage>
   );
 }

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
 let didInit = false;
@@ -6,7 +6,10 @@ let didInit = false;
 function App() {
   useEffect(() => {
     if (!didInit) {
-      console.log(localStorage.getItem('access_token'));
+      const token = localStorage.getItem('access_token');
+      if (token !== null) {
+        console.log(token);
+      }
       didInit = true;
     }
   }, []);

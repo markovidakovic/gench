@@ -1,3 +1,9 @@
+import { PrivatePage } from '../layout';
+
 export function Profile() {
-  return <h1>Profile</h1>;
+  return (
+    <PrivatePage>
+      <h1>Profile</h1>
+    </PrivatePage>
+  );
 }
