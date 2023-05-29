@@ -1,9 +1,12 @@
-import { useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
+import { useAuth } from '../hooks';
 
 export function PublicPage({ children }) {
-  useEffect(() => {
-    console.log('public page');
-  }, []);
+  const { isAuth } = useAuth();
+
+  if (isAuth) {
+    return <Navigate to="/activities" replace={true} />;
+  }
 
   return (
     <div className="h-screen w-screen flex justify-center items-center px-4">

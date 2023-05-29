@@ -18,8 +18,28 @@ export function AuthProvider({ children }) {
 function reducer(state, action) {
   switch (action.type) {
     case 'signup': {
+      return {
+        ...state,
+        fetching: false,
+        isAuth: true,
+        account: action.payload,
+      };
     }
     case 'login': {
+      return {
+        ...state,
+        fetching: false,
+        isAuth: true,
+        account: action.payload,
+      };
+    }
+    case 'logout': {
+      return {
+        ...state,
+        fetching: false,
+        isAuth: false,
+        account: null,
+      };
     }
     default: {
       throw Error('Unknown action: ' + action.type);

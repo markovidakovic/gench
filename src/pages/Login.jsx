@@ -2,8 +2,11 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Input } from '../parts';
 import { PublicPage } from '../layout';
+import { useAuthDispatch } from '../hooks';
 
 export function Login() {
+  const dispatch = useAuthDispatch();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -22,8 +25,12 @@ export function Login() {
     })
       .then((resp) => resp.json())
       .then((json) => {
-        console.log(json);
-        localStorage.setItem('access_token', json.access_token);
+        const { access_token, ...rest } = json;
+        localStorage.setItem('access_token', access_token);
+        dispatch({
+          type: 'login',
+          payload: rest,
+        });
       })
       .catch((err) => console.log(err));
   }
