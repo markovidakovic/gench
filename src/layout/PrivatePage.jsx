@@ -8,5 +8,5 @@ export function PrivatePage({ children }) {
     return <Navigate to="/" replace={true} />;
   }
 
-  return <div>{children}</div>;
+  return <div className="container mx-auto p-10">{children}</div>;
 }

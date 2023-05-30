@@ -58,7 +58,7 @@ export function Login() {
             />
           </div>
           <div className="mt-8">
-            <Button label="Login" type="submit" />
+            <Button label="Login" type="submit" wFull />
           </div>
         </form>
         <div className="mt-2 text-center">
