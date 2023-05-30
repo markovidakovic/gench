@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.jsx';
 import './index.css';
-import { Login, Signup, Profile, Activities } from './pages';
+import { Login, Signup, Profile, Activities, CreateActivity } from './pages';
 import { AuthProvider } from './contexts';
 
 const router = createBrowserRouter([
@@ -26,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: 'activities',
         element: <Activities />,
+      },
+      {
+        path: 'activities/create',
+        element: <CreateActivity />,
       },
     ],
   },

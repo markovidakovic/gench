@@ -12,27 +12,29 @@ export function Login() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const data = {
-      email,
-      password,
-    };
-    fetch(import.meta.env.VITE_API_URL + '/auth/tokens/access', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then((resp) => resp.json())
-      .then((json) => {
-        const { access_token, ...rest } = json;
-        localStorage.setItem('access_token', access_token);
-        dispatch({
-          type: 'login',
-          payload: rest,
-        });
+    if (email !== '' && password !== '') {
+      const data = {
+        email,
+        password,
+      };
+      fetch(import.meta.env.VITE_API_URL + '/auth/tokens/access', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       })
-      .catch((err) => console.log(err));
+        .then((resp) => resp.json())
+        .then((json) => {
+          const { access_token, ...rest } = json;
+          localStorage.setItem('access_token', access_token);
+          dispatch({
+            type: 'login',
+            payload: rest,
+          });
+        })
+        .catch((err) => console.log(err));
+    }
   }
 
   return (
