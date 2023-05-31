@@ -66,7 +66,7 @@ export function Signup() {
             </Link>
           </div>
           <div className="mt-2">
-            <Button label="Signup" type="submit" />
+            <Button label="Signup" type="submit" wFull />
           </div>
         </form>
       </div>

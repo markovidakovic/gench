@@ -34,6 +34,7 @@ function reducer(state, action) {
       };
     }
     case 'logout': {
+      localStorage.removeItem('access_token');
       return {
         ...state,
         fetching: false,

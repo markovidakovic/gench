@@ -83,7 +83,7 @@ function List() {
 
 function Item({ activity, handleDelete }) {
   return (
-    <div className="p-4 border rounded-md">
+    <div className="p-4 border rounded-md mb-4">
       <div className="flex justify-between items-center">
         <h1 className="text-sm">{activity.title}</h1>
         <div>

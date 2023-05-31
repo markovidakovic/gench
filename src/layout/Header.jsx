@@ -1,3 +1,13 @@
+import { Button } from '../parts';
+import { useAuthDispatch } from '../hooks';
+
 export function Header() {
-  return <h1>Header</h1>;
+  const dispatch = useAuthDispatch();
+
+  return (
+    <div className="p-3 flex justify-between items-center">
+      <h1>logo</h1>
+      <Button label="Logout" onClick={() => dispatch({ type: 'logout' })} />
+    </div>
+  );
 }
